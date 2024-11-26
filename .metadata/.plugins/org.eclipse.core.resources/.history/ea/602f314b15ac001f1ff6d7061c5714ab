@@ -11,11 +11,6 @@ public class CartTest {
 	        cart.addDigitalVideoDisc(dvd3);
 	        //Test the print method
 	        cart.print();
-	        //Test search by ID method
-	        cart.searchById(2);
-	        cart.searchById(4);
-	        //Test search by Title method
-	        cart.searchByTitle("The Lion King");
-	        cart.searchByTitle("Avatar 1");
+
 	  }
 }
