@@ -1,0 +1,7 @@
+Bài tập 2.2.1 đến 2.2.4 em sử dụng phiên bản Java 8, còn các bài tập sau do em chưa cài đặt được phiên bản Java 8 trên máy nên em sử dụng tạm phiên bản Java 21.
+1. Nếu chọn "Cancel" giá trị của biến option được đặt thành JOptionPane.CANCEL_OPTION, nhưng chương trình chỉ kiểm tra JOptionPane.YES_OPTION nên khi bấm vào "Cancel" điều kiện JOptionPane.YES_OPTION là sai nên chương trình vẫn hiện thông báo là "You've chosen: No"
+2. Cho biến option nhận 1 trong 2 giá trị JOptionPane.YES_OPTION hoặc JOptionPane.NO_OPTION khi sử dụng phương thức JOptionPane.showOptionDialog() để tùy chỉnh các nút "Yes" và "No" ví dụ:
+if (option == JOptionPane.YES_OPTION) {
+           // chương trình khi chọn "Yes"
+        } else if (option == JOptionPane.NO_OPTION) {
+            // chương trình khi chọn "No"
