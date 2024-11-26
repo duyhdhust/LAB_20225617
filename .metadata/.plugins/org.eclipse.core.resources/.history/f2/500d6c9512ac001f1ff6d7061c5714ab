@@ -18,14 +18,6 @@ public class DigitalVideoDisc {
 		this.id = nbDigitalVideoDiscs;
     }
 
-	public DigitalVideoDisc(String title, String category, Float cost) {
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
-		nbDigitalVideoDiscs++;
-		this.id = nbDigitalVideoDiscs;
-	}
-    
 	public DigitalVideoDisc(String title) {
 		this.title = title;
 		nbDigitalVideoDiscs++;
@@ -64,12 +56,6 @@ public class DigitalVideoDisc {
         DigitalVideoDisc that = (DigitalVideoDisc) obj;
         return title != null && title.equals(that.title);
     }
-    
-	@Override
-	public String toString() {
-	    return "DVD - " + title + " - " + category + " - " + director + " - " + length + " mins: " + cost + " $";
-	}
-
     
 	public void setTitle(String title){ this.title = title; }
 	public void setCategory(String category){ this.category = category; }
