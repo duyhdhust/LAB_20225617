@@ -65,11 +65,9 @@ public class DigitalVideoDisc {
         return title != null && title.equals(that.title);
     }
     
-	@Override
-	public String toString() {
-	    return "DVD - " + title + " - " + category + " - " + director + " - " + length + " mins: " + cost + " $";
+	public boolean isMatch(String title) {
+	    return this.title.equalsIgnoreCase(title);
 	}
-
     
 	public void setTitle(String title){ this.title = title; }
 	public void setCategory(String category){ this.category = category; }
