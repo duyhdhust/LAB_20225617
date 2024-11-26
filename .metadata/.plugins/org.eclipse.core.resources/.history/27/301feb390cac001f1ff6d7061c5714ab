@@ -26,11 +26,9 @@ public class Cart {
     	}
     }
     
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        if (qtyOrdered +2 < MAX_NUMBERS_ORDERED) {
-            itemsOrdered[qtyOrdered] = dvd1;
-            qtyOrdered++;
-            itemsOrdered[qtyOrdered] = dvd2;
+    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
+        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+            itemsOrdered[qtyOrdered] = disc;
             qtyOrdered++;
             System.out.println("DVD da duoc them.");
         } else {
