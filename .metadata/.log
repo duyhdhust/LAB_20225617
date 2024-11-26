@@ -1,0 +1,186 @@
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-11-26 22:15:18.993
+!MESSAGE No such file or directory
+!STACK 0
+java.io.IOException: No such file or directory
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:218)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at org.eclipse.jdt.internal.launching.LaunchingPlugin.writeInstallInfo(LaunchingPlugin.java:1110)
+	at org.eclipse.jdt.internal.launching.LaunchingPlugin$1$1.saving(LaunchingPlugin.java:584)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.core.resources 4 2 2024-11-26 22:15:18.997
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems while saving variables and containers
+	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4522)
+	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4773)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+Caused by: java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4517)
+	... 10 more
+!SUBENTRY 1 org.eclipse.jdt.core 4 4 2024-11-26 22:15:18.998
+!MESSAGE Problems while saving variables and containers
+!STACK 0
+java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4517)
+	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4773)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+!SUBENTRY 1 org.eclipse.jdt.core 4 4 2024-11-26 22:15:18.998
+!MESSAGE Problems while saving variables and containers
+!STACK 0
+java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4517)
+	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4787)
+	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4773)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-11-26 22:15:19.004
+!MESSAGE Can't write workspace state
+!STACK 0
+java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.createObjectOutputStream(ProjectRegistryReader.java:127)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.writeWorkspaceState(ProjectRegistryReader.java:116)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.writeWorkspaceState(ProjectRegistryManager.java:1047)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.saving(ProjectRegistryManager.java:1198)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2024-11-26 22:15:19.006
+!MESSAGE Could not write: /Users/ducduy/Documents/java/LAB/.metadata/.mylyn/repositories.xml.zip
+!STACK 0
+java.io.IOException: No such file or directory
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:218)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at org.eclipse.mylyn.internal.tasks.core.TaskRepositoriesExternalizer.writeRepositoriesToXML(TaskRepositoriesExternalizer.java:58)
+	at org.eclipse.mylyn.internal.tasks.core.TaskRepositoryManager.saveRepositories(TaskRepositoryManager.java:431)
+	at org.eclipse.mylyn.internal.tasks.core.RepositoryExternalizationParticipant.save(RepositoryExternalizationParticipant.java:79)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:75)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:227)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.mylyn.tasks.core 2 0 2024-11-26 22:15:19.007
+!MESSAGE Save failed for Task List
+!STACK 1
+org.eclipse.core.runtime.CoreException: Saving Task List failed
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:76)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.lambda$1(TaskListExternalizationParticipant.java:128)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:735)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:726)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.save(TaskListExternalizationParticipant.java:131)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:75)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:227)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.mylyn/tasks.xml.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:61)
+	... 7 more
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2024-11-26 22:15:19.007
+!MESSAGE Saving Task List failed
+!STACK 0
+java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.mylyn/tasks.xml.zip (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizer.writeTaskList(TaskListExternalizer.java:61)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.lambda$1(TaskListExternalizationParticipant.java:128)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:735)
+	at org.eclipse.mylyn.internal.tasks.core.TaskList.run(TaskList.java:726)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.TaskListExternalizationParticipant.save(TaskListExternalizationParticipant.java:131)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:75)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:227)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.ide 4 4 2024-11-26 22:15:21.054
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2024-11-26 22:15:21.055
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2024-11-26 22:15:21.055
+!MESSAGE Could not write workspace metadata '/Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree'.
+!STACK 0
+java.io.FileNotFoundException: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:295)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:185)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:55)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1424)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1230)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2492)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:553)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-11-26 22:15:21.806
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2024-11-26 22:15:26.644 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=23.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=vi_VN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/ducduy/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/ducduy/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-26 22:15:28.830
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-26 22:15:32.322
+!MESSAGE Logback config file: /Users/ducduy/Documents/java/LAB/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
