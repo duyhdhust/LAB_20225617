@@ -1,109 +1,95 @@
 package hust.soict.ite6.aims.cart;
 
-import hust.soict.ite6.aims.disc.DigitalVideoDisc;
-
+import hust.soict.ite6.aims.media.Media;
+import java.util.ArrayList;
+import java.util.Collections;
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 20;
-    private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-    private int qtyOrdered = 0;
+   private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
-    // Thêm DVD vào giỏ hàng
-    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
-            itemsOrdered[qtyOrdered] = disc;
-            qtyOrdered++;
-            System.out.println("DVD da duoc them.");
-        } else {
-            System.out.println("Khong the them DVD.");
+   public void addMedia(Media item) {
+	   if(itemsOrdered.contains(item)) {
+           System.out.println(item.getClass().getSimpleName() + ' ' + item.getTitle() + " is already in cart!");
+       } else {
+           itemsOrdered.add(item);
+           System.out.println(item.getClass().getSimpleName() + ' ' + item.getTitle() + " is now in cart!");
+       }
+   }
+
+   public void removeMedia(Media item) {
+	   if(itemsOrdered.contains(item)) {
+		   itemsOrdered.remove(item);
+		   System.out.println(item.getClass().getSimpleName() + ' ' + item.getTitle() + " was successfully removed from cart!");
+	   } else {
+		   System.out.println(item.getClass().getSimpleName() + ' ' + item.getTitle() + " is not in the cart!");
+	   }
+   }
+
+    public float totalCost(){
+        float totalPrice = 0;
+        for(Media item : itemsOrdered){
+            totalPrice += item.getCost();
         }
-    }
-    
-    public void addDigitalVideoDisc(DigitalVideoDisc dvdList[]) {
-    	for(DigitalVideoDisc disc : dvdList) {
-	        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
-	            itemsOrdered[qtyOrdered] = disc;
-	            qtyOrdered++;
-	            System.out.println("DVD da duoc them.");
-	        } else {
-	            System.out.println("Khong the them DVD.");
-	        }
-    	}
-    }
-    
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        if (qtyOrdered +2 < MAX_NUMBERS_ORDERED) {
-            itemsOrdered[qtyOrdered] = dvd1;
-            qtyOrdered++;
-            itemsOrdered[qtyOrdered] = dvd2;
-            qtyOrdered++;
-            System.out.println("DVD da duoc them.");
-        } else {
-            System.out.println("Khong the them DVD.");
-        }
+        return totalPrice;
     }
 
-    // Xóa DVD khỏi giỏ hàng
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-        boolean found = false;
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].equals(disc)) { 
-                for (int j = i; j < qtyOrdered - 1; j++) {
-                    itemsOrdered[j] = itemsOrdered[j + 1]; 
-                }
-                itemsOrdered[qtyOrdered - 1] = null; 
-                qtyOrdered--;
-                found = true;
-                System.out.println("DVD đã bị xóa.");
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("DVD khong ton tai.");
-        }
-    }
-
-    // Tính tổng chi phí của tất cả các DVD trong giỏ hàng
-    public float totalCost() {
-        float total = 0;
-        for (int i = 0; i < qtyOrdered; i++) {
-            total += itemsOrdered[i].getCost(); 
-        }
-        return total;
-    }
     public void print() {
-        System.out.println("***********************CART***********************");
-        System.out.println("Ordered Items:");
-        for (int i = 0; i < qtyOrdered; i++) {
-            System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
-        }
-        float totalCost = totalCost();
-        System.out.println("Total cost: " + totalCost + " $");
-        System.out.println("***************************************************");
-    }
-    public void searchById(int id) {
-        boolean found = false;
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].getId() == id) {
-            	System.out.println("DVD with id " + "\"" + id + "\"" + " found:\n" + itemsOrdered[i].toString());
-                found = true;
-                break;
+        StringBuilder output = new StringBuilder("*************CART************************** \nOrdered items: \n");
+        if(itemsOrdered.isEmpty()) {
+            output.append("No time\n");
+        } else {
+            int i = 1;
+            for (Media item : itemsOrdered) {
+                output.append(i + ".[" + item.getTitle() + "] - [" + item.getCategory() + "] - "
+                        + item.getCost() + " $\n");
+                i++;
             }
         }
-        if (!found) {
-            System.out.println("No DVD found with ID: " + id);
+        output.append("total: ").append(totalCost()).append(" $\n");
+        output.append("================================================\n");
+        System.out.println(output);
+    }
+
+    public void searchById(int i) {
+        if(i > itemsOrdered.size()) {
+            System.out.println("No match found !");
+        } else {
+            System.out.println("Result: " +  "[" + itemsOrdered.get(i-1).getTitle() +
+                    "] - [" + itemsOrdered.get(i-1).getCategory() + "] -"
+                    +  + itemsOrdered.get(i-1).getCost() + " $\n");
         }
     }
+
     public void searchByTitle(String title) {
-        boolean found = false;
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].isMatch(title)) {
-                System.out.println("DVD " + "\"" + title + "\"" + " found:\n" + itemsOrdered[i].toString());
-                found = true;
+        for(Media item : itemsOrdered) {
+            if(item.getTitle().equals(title)) {
+                System.out.println("Result: " +  "[" + item.getTitle() +
+                        "] - [" + item.getCategory() + "] -"
+                        +item.getCost() + " $\n");
+                return;
             }
         }
-        if (!found) {
-            System.out.println("No DVD found with title: " + title);
-        }
+        System.out.println("No match found");
     }
+
+    public Media findMedia(String title) {
+        for (Media item : itemsOrdered) {
+            if (item.getTitle().equals(title)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public void emptyCart() {
+        itemsOrdered.removeAll(itemsOrdered);
+    }
+
+    public void sortByTitleCost() {
+        Collections.sort(itemsOrdered,Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void sortByCostTitle() {
+        Collections.sort(itemsOrdered,Media.COMPARE_BY_COST_TITLE);
+    }
+
 }
