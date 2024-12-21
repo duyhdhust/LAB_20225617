@@ -1,31 +1,31 @@
 package hust.soict.ite6.aims;
-
-import java.util.*;
-import hust.soict.ite6.aims.media.*;
 import hust.soict.ite6.aims.cart.Cart;
 import hust.soict.ite6.aims.store.Store;
+import hust.soict.ite6.aims.media.*;
+import hust.soict.ite6.aims.exception.*;
+import java.util.*;
 public class Aims {
-public static void main(String[] args) {
-
-	Media dvd = new DigitalVideoDisc(1, "abcxyz", "zzz", 19.95f, 87, "xxx");
-		 
-	List<String> authors = new ArrayList<String>();
-	authors.add("A");
-	authors.add("B");
-	Media book = new Book(2,"abc", "xyz", 6.5f, authors);
-	     
-	ArrayList<Track> tracks = new ArrayList<Track>();
-	tracks.add(new Track("yyy",3));
-	tracks.add(new Track("kkk",4));
-	Media cd = new CompactDisc(3, "AAA", "BBB" , 5.5f, "CCC", tracks);
-	Store store = new Store();
-	store.addMedia(cd);
-	store.addMedia(dvd);
-	store.addMedia(book);
-	Cart cart = new Cart();
-	Scanner scanner = new Scanner(System.in);
-    showMenu(scanner, store, cart);
-}
+    public static void main(String[] args) throws PlayerException{
+    	// Khoi tao cac item HoangAnh_226076
+    	Media dvd = new DigitalVideoDisc("The Lion King", "Animation", 19.95f, 87, "Roger Allers");
+    		 
+    	List<String> authors = new ArrayList<String>();
+    	authors.add("To Hoai");
+    	authors.add("Nguyen Huy Tuong");
+    	Media book = new Book("Tuoi tre du doi", "Ki su", 6.5f, authors);
+    	     
+    	ArrayList<Track> tracks = new ArrayList<Track>();
+    	tracks.add(new Track("End of the world",3));
+    	tracks.add(new Track("Eternal sunshine",4));
+    	Media cd = new CompactDisc("Eternal sunshine", "Pop" , 5.5f, "Ariana Grande", tracks);
+    	Store store = new Store();
+    	store.addMedia(cd);
+    	store.addMedia(dvd);
+    	store.addMedia(book);
+    	Cart cart = new Cart();
+    	Scanner scanner = new Scanner(System.in);
+        showMenu(scanner, store, cart);
+    }
 
 public static void showMenu(Scanner scanner, Store store, Cart cart) {
     while (true) {
@@ -231,7 +231,6 @@ public static void mediaDetailsMenu(Scanner scanner, Store store, Cart cart) {
 
     }
 }
-	// storeMenu HoangAnh_226076
 public static void storeMenu(Scanner scanner, Store store, Cart cart) {
     System.out.println(store);
     while (true) {
