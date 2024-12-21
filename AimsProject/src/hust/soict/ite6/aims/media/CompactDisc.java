@@ -1,6 +1,9 @@
 package hust.soict.ite6.aims.media;
 
+
 import java.util.ArrayList;
+
+import hust.soict.ite6.aims.exception.PlayerException;
 public class CompactDisc extends Disc implements Playable
 {
 	private String artist;
@@ -9,17 +12,17 @@ public class CompactDisc extends Disc implements Playable
 		return artist;
 	}
 	
-    public CompactDisc(int id, String title, String category, float cost, String artist, ArrayList<Track> tracks) {
-        super(id, title, category, cost);
+    public CompactDisc(String title, String category, float cost, String artist, ArrayList<Track> tracks) {
+        super(title, category, cost);
         this.tracks = tracks;
         this.artist = artist;
         this.setLength(getLength());
     }
 
-    public CompactDisc(int id, String title, String category, float cost) {
-        super(id, title, category, cost);
+    public CompactDisc(String title, String category, float cost) {
+        super(title, category, cost);
     }
-
+    // Method addTrack HoangAnh_226076
     public void addTrack(Track song) {
         if(tracks.contains(song)) {
             System.out.println(song.getTitle() + " is already in the CD");
@@ -27,7 +30,7 @@ public class CompactDisc extends Disc implements Playable
             tracks.add(song);
         }
     }
-
+    // Method removeTrack HoangAnh_226076
     public void removeTrack(Track song) {
         if(tracks.contains(song)) {
             tracks.remove(song);
@@ -35,6 +38,7 @@ public class CompactDisc extends Disc implements Playable
             System.out.println(song.getTitle() + " is not in the CD");
         }
     }
+    // Method getLength HoangAnh_226076
     @Override
     public int getLength() {
     	int totalLength = 0;
@@ -43,14 +47,16 @@ public class CompactDisc extends Disc implements Playable
     	}
     	return totalLength;
     }
-
-    public void play(){
-    	System.out.println("Title: " + getTitle() + "/n" + "Length: " + getLength() + "/n"
-    			+ "Artist: " + getArtist() + "/n" + "Director: " + getDirector());
-    	for(Track song : tracks)
-    	{
-    		song.play();
-    	}
+    //Method play HoangAnh_226076
+    public void play() throws PlayerException {
+        if(this.getLength() < 0) {
+            throw new PlayerException("ERROR: DVD-length is non-positive!");
+        } else {
+            System.out.println("\ntitle: " + getTitle() + '\n' + "artist: " + getArtist() + "\n\n" + "Tracks:");
+            for (Track song : tracks) {
+                song.play();
+            }
+        }
     }
     
     @Override
@@ -72,5 +78,9 @@ public class CompactDisc extends Disc implements Playable
         }
         return print.toString();
     }
+
+	public ArrayList<Track> getTracks() {
+		return tracks;
+	}
 
 }
